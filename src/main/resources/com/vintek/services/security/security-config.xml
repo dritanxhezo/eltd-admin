@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restrictions>
+    <class name="com.vintek.services.controller.LoginController">
+        <method name="resetPassword">
+            <condition>some</condition>
+            <errorCode></errorCode>
+            <errorMessage></errorMessage>
+        </method>
+    </class>
+    <class name="com.vintek.services.controller.UserController">
+        <method name="login">
+            <condition>some1</condition>
+            <errorCode></errorCode>
+            <errorMessage></errorMessage>
+        </method>
+    </class>    
+</restrictions>

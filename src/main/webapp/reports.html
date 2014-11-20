@@ -1,0 +1,208 @@
+<div ng-controller="ReportsController">
+	<link rel="stylesheet" type="text/css" href="lib/daterangepicker/daterangepicker-bs3.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/daterangepicker/philly-theme.css" />
+	<link rel="stylesheet" type="text/css" href="lib/ngTree/css/angular.treeview.css">
+	<div class="row">
+		<div class="col-xs-3 column">
+			<fieldset><legend>Reports</legend>
+				<div class="">
+					<button id="newReport" name="newreport" class="btn btn-xs btn-default">New Custom Report</button>
+				</div>
+				<div data-angular-treeview="true"
+					 data-tree-id="reportsTree"
+					 data-tree-model="reports"
+					 data-node-id="id"
+					 data-node-label="label"
+					 data-node-children="children"
+					 class="reportsTree">
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-xs-9 column">
+			<form>
+			<fieldset><legend>Options</legend>
+			<div class="row">
+				<div class="form-group col-xs-6">
+					<label class="control-label" for="orgs">Organizations</label>
+					<select id="orgs" name="orgs" class="form-control" multiple="multiple" size="5" ng-model="reportOrgs" ng-options="org.orgId + ' - ' + org.orgName for org in currTemplate.orgs"></select>					
+				</div>
+
+				<div class="form-group col-xs-6">				  
+				  <div class="col-xs-4" style="padding-left:0;padding-right:0;">
+					<label class="control-label" for="dateField">Limit by date</label>
+					<select id="dateField" name="dateField" class="form-control">
+					  <option value="1">Start Date</option>
+					  <option value="2">End Date</option>
+					  <option value="3">Due Date</option>
+					  <option value="4">Perfected Date</option>
+					</select>
+				  </div>
+				  <div class="col-xs-8">
+					<label class="control-label" for="dateRange">Date Range</label>
+					<div class="input-group">
+						<input type="text" id="dateRange" name="dateRange" class="form-control"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+					</div>
+				  </div>
+				</div>
+				<div class="form-group col-xs-3">
+					<label class="control-label" for="archive">Archive Status</label>
+					<select id="archive" name="archive" class="form-control">
+					  <option value="1">Both</option>
+					  <option value="2">Active Accounts</option>
+					  <option value="3">Archived Accounts</option>
+					</select>
+				</div>					
+			</div>
+			<div class="row">
+				<div class="form-group col-xs-4">
+					<label class="control-label" for="sortBy">Sort By</label>
+					<select id="sortBy" name="sortBy" class="form-control" ng-model="reportSortBy" ng-options="field.fieldName for field in currTemplate.fields"></select>
+				</div>
+				<div class="form-group col-xs-4">
+					<div>
+					  <div class="radio">
+						<label for="sortDirection-0"><input type="radio" name="sortDirection" id="sortDirection-0" value="1" checked="checked">Descending</label>
+					  </div>
+					  <div class="radio">
+						<label for="sortDirection-1"><input type="radio" name="sortDirection" id="sortDirection-1" value="2">Ascending</label>
+					  </div>
+					</div>
+				</div>
+			</div>
+			</fieldset>
+
+			<fieldset><legend>Filters</legend>
+			<div class="form-group col-xs-12">
+				<div class="col-xs-3">
+					<select id="filterField" name="filterField" class="form-control" ng-model="currTemplate.newFilter.field" ng-options="field.fieldName for field in currTemplate.fields"></select>
+				</div>
+				<div class="col-xs-3">
+					<select id="filterOpr" name="filterOpr" class="form-control" ng-model="currTemplate.newFilter.opr" ng-options="opr.label for opr in filterOperators.operators  | filter:operatorForField"></select>						
+				</div>
+				<div class="col-xs-3">
+					<input id="filterValue" name="filterValue" type="text" placeholder="Filter Value" class="form-control input-md" ng-model="currTemplate.newFilter.value"> <!--required=""-->
+				</div>
+				<div class="col-xs-3">
+					<button id="btnFilter" name="btnFilter" class="btn btn-default" ng-click="addFilter()">{{(currTemplate.editingFilter>-1)?'Done changing this filter':'Add Filter'}}</button>
+				</div>
+			</div>
+			
+			<div class="row">
+				<ul class="col-xs-6 col-xs-offset-2 list-unstyled">
+				  <li ng-repeat="filter in currTemplate.filters" class="col-xs-12">
+					<a ng-click="editFilter($index)">{{filter.field.fieldName}} {{filter.opr.label}} {{filter.value}}</a><a class="close" ng-click="deleteFilter($index)">&times;</a>
+				  </li>
+				</ul>
+			</div>				
+			</fieldset>
+			<hr/>
+			<div class="text-center">
+				<button id="runReport" name="runReport" class="btn btn-primary" ng-click="runReport()">Run Report</button>
+			</div>
+			<!--div>{{serializedParams}}</div-->
+			</form>
+
+		</div>
+	</div>
+	<div class="row clearfix" style="padding:20px 0;">
+<!-- 
+		<div class="col-xs-12 column">
+			<div class="progress progress-striped hidden">
+				<div class="progress-bar progress-success"></div>
+			</div>
+			<fieldset><legend>Results</legend>
+			<div class="dataTable withPagination">
+			<table class="table-condensed" id="result">
+				<thead>
+					<tr>
+						<th>OrgID</th>
+						<th>AccountID</th>
+						<th>Title State</th>
+						<th>Title Number</th>
+						<th>VIN</th>
+						<th>Registered Owner</th>
+						<th>Received Date</th>
+						<th>ELT</th>
+						<th>Year</th>
+						<th>Make</th>
+						<th>Model</th>
+						<th>Archive</th>
+					</tr>
+				</thead>
+				<tbody>						
+					<tr><td>4499</td>	<td>1037050398</td>	<td>CA</td>	<td>ZENDWG</td>	<td>1B7GL22Z81S119093</td>	<td>WARREN,BRANDON</td>	<td>41676</td>	<td>Y</td>	<td>2001</td>	<td>DODG</td>	<td>PK</td>	<td>N</td></tr>
+					<tr><td>4499</td>	<td>1041100999</td>	<td>WA</td>	<td>WW07710</td>	<td>1C6RR7MT1ES250120</td>	<td>NOYES,JACK W</td>	<td>41692</td>	<td>Y</td>	<td>2014</td>	<td>RAM</td>	<td>1500 4X4</td>	<td>N</td></tr>
+					<tr><td>4499</td>	<td>1040165613</td>	<td>WA</td>	<td>WSU0993</td>	<td>WDCGG8HB6CF814115</td>	<td>DAWSON,RICHARD A</td>	<td>41692</td>	<td>Y</td>	<td>2012</td>	<td>MERZ</td>	<td>GLK350</td>	<td>N</td></tr>
+					<tr><td>4499</td>	<td>1005306368</td>	<td>WA</td>	<td>WE00864</td>	<td>1FTFW1ET3DFD84635</td>	<td>SUNDEM,CHAD R</td>	<td>41692</td>	<td>Y</td>	<td>2013</td>	<td>FORD</td>	<td>F150</td>	<td>N</td></tr>
+					<tr><td>4499</td>	<td>1032494880</td>	<td>WA</td>	<td>W350WSU</td>	<td>2GKFLTEK7D6113202</td>	<td>QUINTANA,ILEA MAY</td>	<td>41678</td>	<td>Y</td>	<td>2013</td>	<td>GMC</td>	<td>TERRAIN</td>	<td>N</td></tr>
+					<tr><td>4499</td>	<td></td>	<td>NY</td>	<td>VTK115449052</td>	<td>4S4BP62C977311308</td>	<td>BURKE,JEREMY J</td>	<td>41691</td>	<td>Y</td>	<td>2007</td>	<td>SUBAR</td>	<td></td>	<td>N</td></tr>
+					<tr class="selected"><td>4499</td>	<td>1033621085</td>	<td>NY</td>	<td>VTK115449051</td>	<td>2T3DFREV5DW107362</td>	<td>J W &J M BACHER/TST J W &J M BACHER/STL</td>	<td>41691</td>	<td>Y</td>	<td>2013</td>	<td>TOYOT</td>	<td></td>	<td>N</td></tr>
+					<tr><td>4499</td>	<td>1038934913</td>	<td>NY</td>	<td>VTK115449046</td>	<td>WBA3B5C51EP540917</td>	<td>CUEVAS-VARGAS,LIANA</td>	<td>41691</td>	<td>Y</td>	<td>2014</td>	<td>BMW</td>	<td></td>	<td>N</td></tr>
+				</tbody>
+			</table>
+			</div>
+			<ul class="pagination pagination-sm">
+			  <li><a href="#">&laquo;</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">&raquo;</a></li>
+			</ul>
+			</fieldset>
+		</div>
+ -->
+        <div class="col-xs-12 column" ng-show="results.data.length>0">
+        <fieldset><legend>Results</legend>
+            <div class="dataTable withPagination">
+                <table class="table-condensed" id="reportResult">
+                    <thead>
+                    <tr>
+                        <th ng-repeat="header in results.header">{{ header.fieldName }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in pagedItems[currentPage]" ng-click="selectRow($index)" ng-class="{selected: $index === selectedRow}">                      <!--tr ng-repeat="row in resultsData"-->
+                        <td ng-repeat="header in results.header">{{row[header.dataField]}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="pagination pagination-sm">
+                <li ng-class="{disabled: currentPage == 0}"><a href ng-click="prevPage()">&laquo;</a></li>
+                <li ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) "
+                    ng-class="{active: n == currentPage}"
+                    ng-click="setPage()"><a href ng-bind="n + 1">1</a></li>
+                <li ng-class="{disabled: (currentPage) == pagedItems.length - 1}"><a href ng-click="nextPage()">&raquo;</a></li>
+            </ul>
+        </fieldset>
+        </div>
+    </div>
+	</div>
+
+	<script type="text/javascript" src="lib/daterangepicker/moment.js"></script>
+	<script type="text/javascript" src="lib/daterangepicker/daterangepicker.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/* date range init*/
+			$('#dateRange').daterangepicker(
+				{ranges: {
+					 'Today': [moment(), moment()],
+					 'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+					 'Last 7 Days': [moment().subtract('days', 6), moment()],
+					 'Last 30 Days': [moment().subtract('days', 29), moment()],
+					 'This Month': [moment().startOf('month'), moment().endOf('month')],
+					 'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+					},
+					startDate: moment().subtract('days', 29),
+					endDate: moment()
+				},
+				function(start, end) {
+					$('#dateRange').val(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
+				}
+			);
+		});
+	</script>
+</div>

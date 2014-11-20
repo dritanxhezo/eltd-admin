@@ -1,0 +1,20 @@
+.daterangepicker td.in-range {
+	background: #DDD;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+	background-color: #7A7A7A;
+	border-color: #090909;
+	color: #FFF;
+}
+.daterangepicker .ranges li {
+	font-size: 11px;
+	background: #F5F5F5;
+	border: 1px solid #F5F5F5;
+	color: #666;
+	padding: 3px 12px;
+}
+.daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
+	background: #666;
+	border: 1px solid #000;
+	color: #FFF;
+}

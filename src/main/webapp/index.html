@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="MainController">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="{{props.appName}}"/>
+	<meta name="keywords" content="" />
+	<meta name="robots" content="noindex,nofollow,noarchive,nocache,nosnippet" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title>{{props.appName}}</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/3.1.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/3.1.0/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.0.3/css/font-awesome.min.css"/>
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="lib/html5shiv/3.7.0/html5shiv.js"></script>
+		<script type="text/javascript" src="lib/respondjs/1.4.2/respond.min.js"></script>
+		<script type="text/javascript" src="lib/ie7js/2.1.beta4/IE9.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" type="text/css" href="css/dtstyles.css"/>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+	<div class="pageheader navbar-fixed-top bottom-shadow">
+		<!--top navbar -->
+	    <div class="navbar-xs navbar-inverse">
+	      <div class="container-fluid">
+	        <div class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav navbar-right">
+	            <li class="dropdown">
+	              <a class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-bell-o"></span> Notifications <span class="badge-small">{{getAllNotiCounts(user.notiCounts)}}</span><b class="caret"></b></a>
+	              <ul class="dropdown-menu inverse-dropdown">
+	              	<li ng-repeat="noti in user.notiCounts"><a href="#notificationsModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" style="white-space:normal;" ng-click="setNotiType(noti.name)"><span class="icon {{noti.icon}}"></span><span>{{noti.name}}</span><span class="pull-right inline-badge">{{noti.count}}</span></a></li>
+					<li class="divider">
+					<li><a href="#notificationsModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" ng-click="setNotiType('All')">View All &raquo;</a></li>
+	              </ul>
+	            </li>
+				<li class="divider-vertical">
+	            <li class="dropdown">
+	              <a class="dropdown-toggle" data-toggle="dropdown">{{user.details.name}} <b class="caret"></b></a>
+	              <ul class="dropdown-menu short">
+	                <li><a href="#userSettingsModal" data-toggle="modal" data-backdrop="static" data-keyboard="false"><span class="icon glyphicon glyphicon-cog"></span>Settings</a></li>
+					<li class="divider">
+	                <li><a href="login.html"><span class="icon glyphicon glyphicon-off"></span>Log Out</a></li>
+	              </ul>
+	            </li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+		<!--top navbar -->
+	
+	    <!-- logo and search header -->
+	    <div class="container-fluid searchHeader" style="padding-top:7px;">
+			<div class="dtlogo col-md-4 pull-left">
+				<img src="images/DTLogo.png" alt="Dealertrack Technologies" width="282" height="74">
+			</div>
+			<div class="col-md-4 pull-right" style="padding-right:0;">
+				<form class="searchForm" role="search">
+					<div class="input-group pull-right">
+					  <input type="text" class="form-control search" placeholder="search">
+					  <div class="input-group-btn">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Search <span class="caret"></span></button>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="#">Partner</a></li>
+							<li><a href="#">User</a></li>
+							<li class="divider"></li>
+							<li><a href="#">State Transaction</a></li>
+							<li><a href="#">Partner Import File</a></li>
+						</ul>
+					  </div>
+					</div>
+				</form>
+			</div>
+	    </div>
+	</div>
+	
+    <div class="container-fluid pageContent" style="padding-top:100px;">
+      <div class="row" id="wrapper">
+      
+        <!-- sidebar -->
+        <div class="col-sm-3 col-md-2 sidebar" id="sidebar">
+			<div class="sidebar-toggler"><a id="sidebar-toggle"><span class="glyphicon glyphicon-align-justify pull-right sidebar-toggle-icon"></span></a></div>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#appSettingsPanel">
+                        <h4 class="panel-title"><strong>Application Settings</strong><span class="pull-right glyphicon glyphicon-folder-close" title="Application Settings"></span></h4>
+                    </div>
+                    <div id="appSettingsPanel" class="panel-collapse collapse in">
+                        <div class="panel-body">
+							<ul class="nav-sidebar nav">
+								<li><a href="#"><i class="glyphicon glyphicon-dashboard"></i>   System Dashboard</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-pencil"></i>   Modules</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-bullhorn"></i>   Broadcast Messages</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-bell"></i>   User Notifications</a></li>								
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Work Queue<span class="badge-small pull-right">42</span></a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Manage Help Pages</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#partnerSettingsPanel">
+						<h4 class="panel-title"><strong>Partner Settings</strong><span class="pull-right glyphicon glyphicon-th" title="Partner Settings"></span></h4>
+                    </div>
+                    <div id="partnerSettingsPanel" class="panel-collapse collapse">
+                        <div class="panel-body">
+							<ul class="nav-sidebar nav">
+								<li><a href="#"><i class="glyphicon glyphicon-pencil"></i>   General Settings</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-flash"></i>   Import Data Mapping</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-file"></i>   Lender Groups</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Availble Modules</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Billing Configuration</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Custom Fields</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Acceptable LH Names</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Attachment Descriptors</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Collateral Types</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Lienholder Groups</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Register for State Txn</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-comment"></i>   Dealers</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#usersPanel">
+						<h4 class="panel-title"><strong>Users</strong><span class="pull-right glyphicon glyphicon-user" title="Users"></span></h4>
+                    </div>
+                    <div id="usersPanel" class="panel-collapse collapse">
+                        <div class="panel-body">
+							<ul class="nav-sidebar nav">
+								<li><a href="#"><i class="glyphicon glyphicon-pencil"></i>   User Accounts</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-flash"></i>   User Roles and Privileges</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-file"></i>   User Reports</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-trash text-danger"></i>   Deleted Accounts</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#reportsPanel">
+						<h4 class="panel-title"><strong>Reports</strong><span class="pull-right glyphicon glyphicon-file" title="Reports"></span></h4>
+                    </div>
+                    <div id="reportsPanel" class="panel-collapse collapse">
+                        <div class="panel-body">
+							<ul class="nav-sidebar nav">
+								<li><a href="#"><i class="glyphicon glyphicon-pencil"></i>   Create/Edit Reports</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-flash"></i>   Run Reports</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-file"></i>   Monitor Performance</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#dmvConfigPanel">
+						<h4 class="panel-title"><strong>DMV Config</strong><span class="pull-right glyphicon glyphicon-road" title="DMV Config"></span></h4>
+                    </div>
+                    <div id="dmvConfigPanel" class="panel-collapse collapse">
+                        <div class="panel-body">
+							<ul class="nav-sidebar nav">
+								<li><a href="#"><i class="glyphicon glyphicon-file"></i>   DMV Forms</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-sort"></i>   State Transactions</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-tasks"></i>   Transaction Monitoring</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#billingConfigPanel">
+						<h4 class="panel-title"><strong>Billing Config</strong><span class="pull-right glyphicon glyphicon-usd" title="Billing Config"></span></h4>
+                    </div>
+                    <div id="billingConfigPanel" class="panel-collapse collapse">
+                        <div class="panel-body">
+							<ul class="nav-sidebar nav">
+								<li><a href="#"><i class="glyphicon glyphicon-file"></i>   Billable Transactions</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-sort"></i>   SAP Export Config</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-tasks"></i>   Transaction Monitoring</a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-save"></i>   Manual Export</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>		
+        </div>
+        <!-- /sidebar -->
+        
+        <div class="col-sm-9 -col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <!-- content -->
+			<div class="row">
+				<div class="placeholderDiv" id="someContent" style="height: 800px;padding:10px;"><div ng-view></div></div>
+			</div>
+			<!-- /content -->
+			
+			<div class="pageFooter">
+				<div class="row clearfix">
+					<div class="footer-secondary">
+					   <div class="copyright">
+							<ul>
+							    <li class="copyright-text">{{props.appName}} version: {{props.version}}</li>
+								<li class="copyright-text">&copy; 2014 Dealertrack, Inc. All rights reserved.</li>
+								<li class="patent-text">This product is covered by one or more US and foreign patents and pending patent applications.</li>
+							</ul>
+						</div>
+						<div class="footerIcon-badges-container">
+							<ul>
+								<li><a href="https://www.dealertrack.com/portal/landing-pages/security-awareness" target="_blank"><img width="131" height="51" alt="" border="none" src="images/secure.png"></a></li>
+								<li><a href="https://smp-01.verizonbusiness.com/certinfo/certified.do?CERTID=0210003I200" target="_blank"><img width="145" height="51" alt="" border="none" src="images/trusted.png"></a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+        </div>
+      </div>
+    </div>
+	
+	<!-- userSettingsLabel -->
+	<div class="modal fade" id="userSettingsModal" tabindex="-1" role="dialog" aria-labelledby="userSettingsLabel" aria-hidden="true" style="z-index:1510;top:30%">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="userSettingsLabel">User Settings: {{user.details.name}}</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="">
+				  <form action="">
+					   <div class="row">
+						   <img class="pull-left" alt="" src="images/user_noPhoto140.jpg" width="140" height="140"/>
+							<div class="tableDiv pull-left">
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">User Id:</span>
+								<span class="cellDiv">{{user.details.userID}}</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">Full Name:</span>
+								<span class="cellDiv">{{user.details.name}}</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">Email:</span>
+								<span class="cellDiv">{{user.details.email}}</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">Phone:</span>
+								<span class="cellDiv">{{user.details.phone}}{{(!user.details.ext.trim())?'':' x '+user.details.ext}}</span>
+							  </div>
+							</div>
+							<div class="tableDiv pull-left with-left-border" style="margin-left: 10px;">
+							  <div class="rowDiv">
+								 <span class="cellDiv lbl">Status:</span>
+								 <span class="cellDiv">Active</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">Failed Logins:</span>
+								<span class="cellDiv">{{user.details.failedLogins}}</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">Expires On:</span>
+								<span class="cellDiv">{{user.details.expiresOn}}</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">User since:</span>
+								<span class="cellDiv">{{user.details.createdOn}}</span>
+							  </div>
+							  <div class="rowDiv">
+								<span class="cellDiv lbl">Last Login:</span>
+								<span class="cellDiv">{{user.details.lastLogin}}</span>
+							  </div>                  
+							</div>	           
+						</div>
+				  </form>
+			</div>		  
+		  
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- userSettingsLabel -->
+	
+	<!-- notificationsModal -->
+	<div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="notificationsModal" aria-hidden="true" style="z-index:1510;top:30%">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="notificationsModal">{{showNotiType}} Notifications</h4>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- notificationsModal -->
+	
+	<footer>
+		<script type="text/javascript" src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="lib/angular/1.3.0-beta.11/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angular/1.3.0-beta.11/angular-resource.min.js"></script>
+		<script type="text/javascript" src="lib/angular/1.3.0-beta.11/angular-route.min.js"></script>
+		<script type="text/javascript" src="lib/underscore/1.6.0/underscore-min.js"></script>
+		<script type="text/javascript" src="lib/ngTree/angular.treeview.js"></script>
+		
+		<script type="text/javascript" src="js/ng/app.js"></script>
+		<script type="text/javascript" src="js/ng/services.js"></script>
+		<script type="text/javascript" src="js/ng/controllers.js"></script>
+		<script type="text/javascript" src="js/ng/MainController.js"></script>
+		<script type="text/javascript" src="js/ng/ReportsController.js"></script>
+		<script type="text/javascript" src="js/ng/HelpController.js"></script>
+		<script type="text/javascript" src="js/ng/filters.js"></script>
+		<script type="text/javascript" src="js/ng/directives.js"></script>
+		<script>
+			$("#sidebar-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		</script>
+	</footer>
+</body>
+</html>

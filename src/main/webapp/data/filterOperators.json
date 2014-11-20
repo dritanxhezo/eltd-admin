@@ -1,0 +1,18 @@
+{
+	"operators": [
+		{"id": "equal_to",        "label": "Is Equal To", "forType": [0,1,2,3,4,5]},
+		{"id": "not_equal_to",    "label": "Is Not Equal To", "forType": [0,1,2,3,5]},
+		{"id": "greater_than",    "label": "Is Greater Than", "forType": [1,2,3,4]},
+		{"id": "less_than",       "label": "Is Less Than", "forType": [1,2,3,4]},
+		{"id": "starts_with",     "label": "Starts With", "forType": [0]},
+		{"id": "ends_with",       "label": "Ends With", "forType": [0]},
+		{"id": "not_starts_with", "label": "Does Not Start With", "forType": [0]},
+		{"id": "not_ends_with",   "label": "Does Not End With", "forType": [0]},
+		{"id": "in",              "label": "Is One Of", "forType": [0,1,2,3]},
+		{"id": "not_in",          "label": "Is Not One Of", "forType": [0,1,2,3]},
+		{"id": "null",            "label": "Is Empty", "forType": [0,1,2,3,4]},
+		{"id": "not_null",        "label": "Is Not Empty", "forType": [0,1,2,3,4]},
+		{"id": "contains",        "label": "Contains", "forType": [0]},
+		{"id": "not_contains",    "label": "Not Contains", "forType": [0]}
+	]
+}

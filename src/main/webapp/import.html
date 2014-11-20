@@ -1,0 +1,41 @@
+<div ng-controller="importCtrl">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+				<label for="file" class="col-sm-3 control-label required">Upload File</label>
+				<div class="col-sm-9">
+				  <input type="file" id="file" style="padding-top:4px;">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="mapFile" class="col-sm-3 control-label required">Map File</label>
+				<div class="col-sm-6">
+					<select id="mapFile" name="mapFile" class="form-control">
+						<option value="2">DELAYED_RELEASE</option>
+						<option value="5">MATCH_IMPORT</option>
+						<option value="7">cinfed map</option>
+						<option value="18">NCB Transfer</option>
+						<option value="23">Suntrust Import Map</option>
+						<option value="24">FIRST NIAGARA 20090921</option>
+						<option value="29">FIRST CREDIT</option>
+						<option value="37">TEST ADDING DUP ACCT</option>
+						<option value="43">SHAREFAXMAP</option>
+						<option value="44">APT1811.MAP</option>
+						<option value="50">ZeroBalance</option>
+					</select>			
+				</div>
+			  </div>
+			  <div class="checkbox"><div class="col-sm-offset-2 col-xs-5" style="padding-top:4px;"><input type="checkbox" id="headerRecord" style="margin-top:2px;"><label for="headerRecord" style="font-weight:bold;"> Header Record?</label></div></div>
+			  <div class="checkbox"><div class="col-sm-offset-2 col-xs-3" style="padding-top:4px;"><input type="checkbox" id="email" style="margin-top:2px;"><label for="email" class="control-label" style="font-weight:bold;">Email the log to:</label></div><div class="col-xs-4"><input type="email" id="txtEmail" class="form-control"/></div></div>
+			  <hr/>
+			  <div class="form-group">
+				<div class="col-sm-offset-4 col-sm-8">
+				  <button type="submit" class="btn btn-default">Upload</button>
+				</div>
+			  </div>
+			</form>
+		</div>
+	</div>
+	<div style="padding-bottom:100px;"></div>
+</div>

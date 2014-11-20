@@ -1,0 +1,246 @@
+<div ng-controller="usersCtrl">
+	<div class="row">
+		<div class="col-xs-3 column">
+			<fieldset><legend>Users</legend>
+			<div class="">
+				<button id="newUser" name="newuser" class="btn btn-xs btn-default">New user</button>
+			</div>
+			<div class="skinnyTable dataTable withPagination"> <!--style="max-height:650px;height:60vh;"-->
+			<table class="table-condensed">
+				<thead>
+					<tr><th>User ID</th><th>Full Name</th><th>Status</th></tr>
+					<tr class="tableSearchHead">
+						<th><input size="6"/></th>
+						<th><input size="20"/></th>
+						<th>
+							<div class="btn-group btn-group-xs">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">All <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">All</a></li>
+									<li><a href="#">Active</a></li>
+									<li><a href="#">Enabled</a></li>
+									<li><a href="#">Locked Out</a></li>
+									<li><a href="#">Disabled</a></li>
+								</ul>
+							</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>						
+					<tr><td class="text-center">9</td>	<td>Nora Juarez</td>	<td></td></tr>
+					<tr><td class="text-center">1</td>	<td>Michael Cox</td>	<td></td></tr>
+					<tr><td class="text-center">11</td>	<td>Annabelle Gonzalez</td>	<td></td></tr>
+					<tr><td class="text-center">2</td>	<td>April Mitchell</td>	<td></td></tr>
+					<tr><td class="text-center">33</td>	<td>Dale Hansard</td>	<td></td></tr>
+					<tr><td class="text-center">34</td>	<td>Marcus Davis</td>	<td></td></tr>
+					<tr><td class="text-center">1380</td>	<td>Steven Parvey</td>	<td></td></tr>
+					<tr><td class="text-center">1407</td>	<td>Marsha Kohn</td>	<td></td></tr>
+					<tr><td class="text-center">1601</td>	<td>Tyron Eagle</td>	<td></td></tr>
+					<tr><td class="text-center">1839</td>	<td>Rebecca Williams</td>	<td></td></tr>
+				</tbody>
+			</table>
+			</div>
+			<ul class="pagination pagination-sm">
+			  <li><a href="#">&laquo;</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">&raquo;</a></li>
+			</ul>
+			</fieldset>
+		</div>
+		<div class="col-xs-9 column">
+			<form class="form-horizontal" role="form">
+			<div class="col-xs-9 column with-left-border with-right-border">
+			<fieldset><legend>User Settings</legend>
+			<div class="text-center">
+				<button id="btnClone" name="btnClone" class="btn btn-xs btn-default" disabled="disabled" style="margin:0 10px 17px;">Clone</button>
+				<button id="btnPassword" name="btnPassword" class="btn btn-xs btn-default" disabled="disabled" style="margin:0 10px 17px;">Change Password</button>
+				<button id="btnSave" name="btnSave" class="btn btn-xs btn-default" disabled="disabled" style="margin:0 10px 17px;">Save</button>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-xs-7">
+					<div class="form-group"><label for="userID" class="col-xs-5 control-label required">User ID</label><div class="col-xs-7"><input id="userID" class="form-control" required=""/></div></div>
+					<div class="form-group"><label for="fullName" class="col-xs-5 control-label required">Full Name</label><div class="col-xs-7"><input id="fullName" class="form-control" required=""/></div></div>
+					<div class="form-group"><label for="email" class="col-xs-5 control-label">Email</label><div class="col-xs-7"><input type="email" id="email" class="form-control"/></div></div>
+					<div class="form-group"><label for="phoneNumber" class="col-xs-5 control-label">Phone Number</label><div class="col-xs-7"><input type="tel" id="phoneNumber" class="form-control"/></div></div>
+					<div class="form-group"><label for="extension" class="col-xs-5 control-label">Extension</label><div class="col-xs-7"><input id="extension" class="form-control"/></div></div>
+					<div class="form-group"><label for="timeZone" class="col-xs-5 control-label">Time Zone</label>
+						<div class="col-xs-7">
+							<select id="timeZone" name="timeZone" class="form-control">
+								<option value="EST5EDT">Eastern Standard Time</option>
+								<option value="CST6CDT">Central Standard Time</option>
+								<option value="MST7MDT">Mountain Standard Time</option>
+								<option value="PST8PDT">Pacific Standard Time</option>
+								<option value="US/Alaska">US/Alaska</option>
+								<option value="AST">Atlantic Standard Time</option>
+								<option value="HST">Hawaii Standard Time</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group"><label for="misc" class="col-xs-5 control-label">Miscellaneous</label><div class="col-xs-7"><input id="misc" class="form-control" placeholder=""/></div></div>
+				</div>
+				<div class="form-group col-xs-6">
+					<div class="form-group"><label for="status" class="col-xs-6 control-label">Status</label><p class="form-control-static">Active</p></div>
+					<div class="form-group"><label for="failedLogins" class="col-xs-6 control-label">Failed Logins</label><p class="form-control-static">0</p></div>
+					<div class="form-group"><label for="expiresOn" class="col-xs-6 control-label">Expires On</label><p class="form-control-static">Mar 29, 2014</p></div>
+					<div class="form-group"><label for="createdOn" class="col-xs-6 control-label">Created On</label><p class="form-control-static">Dec 06, 2012</p></div>
+					<div class="form-group"><label for="createdBy" class="col-xs-6 control-label">Created by</label><p class="form-control-static">Keith Hudson (khudson)</p></div>
+					<div class="form-group"><label for="lastLogin" class="col-xs-6 control-label">Last Login</label><p class="form-control-static">Feb 25, 2014</p></div>
+					<div class="row">
+						<label for="lockedOut" class="col-xs-5 control-label" style="padding-right:0;">Locked Out</label><input type="checkbox" class="col-xs-1" style="margin-top:9px;">
+						<label for="disabled" class="col-xs-4 control-label"  style="padding-right:0;">Disabled</label><input type="checkbox" class="col-xs-1" style="margin-top:9px;">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-xs-12">
+					<label for="videoStart" class="col-xs-4 control-label" style="padding-right:0;">Training Video Access Start</label><div class="col-xs-3"><input type="date" id="videoStart" class="form-control" placeholder=""/></div>
+					<label for="videoEnd" class="col-xs-1 control-label" style="padding-right:0;">End</label><div class="col-xs-3"><input type="date" id="videoEnd" class="form-control" placeholder=""/></div>
+				</div>
+				<div class="form-group col-xs-10">
+					<label class="control-label col-xs-offset-1" for="comment">Comment</label><textarea class="form-control col-xs-offset-1" rows="3" id="comment" ></textarea>
+				</div>
+			</div>
+			</fieldset>
+
+			<fieldset><legend>Organization Settings</legend>
+			<div class="form-group col-xs-12">
+				<label for="group" class="col-xs-3 control-label required">Group</label>
+				<div class="col-xs-8">
+					<select id="group" name="group" class="form-control">
+						<option value="0" selected="selected">Select Group</option>
+						<option value="1271">1 High Level Auto</option>
+						<option value="1022">1199 SEIU FCU</option>
+						<option value="2602">11th Street Auto Sales</option>
+						<option value="2667">1814</option>
+						<option value="1767">1ST BANK YUMA</option>
+						<option value="1621">1ST CHOICE CREDIT UNION</option>
+						<option value="2617">1st Colonial National Bank</option>
+						<option value="2557">1st Financial Federal Credit Union</option>
+						<option value="1952">1ST GATEWAY CREDIT UNION</option>
+						<option value="1154">1st Summit Bank</option>
+					</select>					
+				</div>
+			</div>
+
+			<div class="form-group col-xs-12" style="margin-bottom:0;">
+				<label for="availOrgs" class="col-xs-5 control-label" style="text-align:left;">Available Organizations</label>
+				<label for="assignedOrgs" class="col-xs-5 col-xs-offset-2 control-label" style="text-align:left;">Assigned Organizations</label>
+			</div>
+			<div class="form-group col-xs-12">
+				<div class="col-xs-5">
+					<select id="availOrgs" name="availOrgs" class="form-control" multiple="multiple" size="10" style="font-size: 11px;padding: 4px;">
+						<option value="1271">1271 - 1 High Level Auto</option>
+						<option value="1022">1022 - 1199 SEIU FCU</option>
+						<option value="2602">2602 - 11th Street Auto Sales</option>
+						<option value="1767">1767 - 1ST BANK YUMA</option>
+						<option value="1621">1621 - 1ST CHOICE CREDIT UNION</option>
+						<option value="2617">2617 - 1st Colonial National Bank</option>
+						<option value="2557">2557 - 1st Financial Federal Credit Union</option>
+						<option value="1952">1952 - 1ST GATEWAY CREDIT UNION</option>
+						<option value="1154">1154 - 1st Summit Bank</option>
+					</select>					
+				</div>
+				<div class="col-xs-2" style="padding:0;">
+					<button id="btnCopyAll" name="btnCopyAll" class="btn btn-xs btn-default form-control" disabled="disabled" style="text-align:left;padding-left:20px;margin:5px 0;">&raquo; Copy All</button>
+					<button id="btnCopy" name="btnCopy" class="btn btn-xs btn-default form-control" disabled="disabled" style="text-align:left;padding-left:20px;margin:5px 0;">&lt; Copy</button>
+					<button id="btnRemove" name="btnRemove" class="btn btn-xs btn-default form-control" disabled="disabled" style="text-align:left;padding-left:20px;margin:5px 0;">&gt; Remove</button>
+					<button id="btnRemoveAll" name="btnRemoveAll" class="btn btn-xs btn-default form-control" disabled="disabled" style="text-align:left;padding-left:20px;margin:5px 0;">&laquo; Remove All</button>
+				</div>
+
+				<div class="col-xs-5">
+					<select id="assignedOrgs" name="assignedOrgs" class="form-control" multiple="multiple" size="10" style="font-size: 11px;padding: 4px;">
+						<option value="1271">1271 - 1 High Level Auto</option>
+						<option value="1621">1621 - 1ST CHOICE CREDIT UNION</option>
+						<option value="2617">2617 - 1st Colonial National Bank</option>
+						<option value="1154">1154 - 1st Summit Bank</option>
+					</select>					
+				</div>
+			</div>
+			</fieldset>
+			
+			</div>
+			<div class="col-xs-3 column">
+				<fieldset><legend>Permissions</legend>
+			
+				<div id="reportsTree" class="demo">
+				<ul>
+					<li id="cboStdPerm"><a href="#"> Standard Permissions</a>
+						<ul>
+							<li id="cboStdPerm1"><a href="#"> View</a></li>
+							<li id="cboStdPerm2"><a href="#"> Reports</a></li>
+							<li id="cboStdPerm3"><a href="#"> View Attachment</a></li>
+							<li id="cboStdPerm4"><a href="#"> Create Notes</a></li>
+							<li id="cboStdPerm5"><a href="#"> Add</a></li>
+							<li id="cboStdPerm6"><a href="#"> Update</a></li>
+							<li id="cboStdPerm7"><a href="#"> Delete</a></li>
+							<li id="cboStdPerm8"><a href="#"> Delete Attachment</a></li>
+							<li id="cboStdPerm9"><a href="#"> Change Title Organization</a></li>
+							<li id="cboStdPerm10"><a href="#"> Edit Acct/Org ID</a></li>
+							<li id="cboStdPerm11"><a href="#"> Update Loan Collateral Only</a></li>
+							<li id="cboStdPerm12"><a href="#"> Lien Inquiry (Compass)</a></li>
+							<li id="cboStdPerm13"><a href="#"> Password Reset Only</a></li>
+						</ul>
+					</li>
+					<li id="cboAdvPerm"><a href="#"> Advanced Permissions</a>
+						<ul>
+							<li id="cboAdvPerm1"><a href="#"> Issue Transactions</a></li>
+							<li id="cboAdvPerm2"><a href="#"> Process Imports</a></li>
+							<li id="cboAdvPerm3"><a href="#"> Destroy Paper Title</a></li>
+							<li id="cboAdvPerm4"><a href="#"> DMV Documents</a></li>
+							<li id="cboAdvPerm5"><a href="#"> Workflow</a></li>
+							<li id="cboAdvPerm6"><a href="#"> Workflow (Read Only)</a></li>
+							<li id="cboAdvPerm7"><a href="#"> Hide Phone icon on Workflow</a></li>
+							<li id="cboAdvPerm8"><a href="#"> Hide Complete button on Workflow</a></li>
+						</ul>
+					</li>
+					<li id="cboSpcPerm"><a href="#"> Special Permissions</a>
+						<ul>
+							<li id="cboSpcPerm1"><a href="#"> Block Add Paper Title</a></li>
+							<li id="cboSpcPerm2"><a href="#"> Block Settings</a></li>
+							<li id="cboSpcPerm3"><a href="#"> Maintenance Release Only</a></li>
+							<li id="cboSpcPerm4"><a href="#"> Delete Active Records</a></li>
+						</ul>
+					</li>
+					<li id="cboIntPerm"><a href="#"> Internal Permissions</a>
+						<ul>
+							<li id="cboIntPerm1"><a href="#"> Organization Admin</a></li>
+							<li id="cboIntPerm2"><a href="#"> Billing Update</a></li>
+							<li id="cboIntPerm3"><a href="#"> Billing - Match Error Processed</a></li>
+							<li id="cboIntPerm4"><a href="#"> Billing - VIN Error Processed</a></li>
+							<li id="cboIntPerm5"><a href="#"> Admin</a></li>
+							<li id="cboIntPerm6"><a href="#"> Bulk Release Admin</a></li>
+							<li id="cboIntPerm7"><a href="#"> Transaction Admin</a></li>
+							<li id="cboIntPerm8"><a href="#"> Match Misc Docs</a></li>
+							<li id="cboIntPerm9"><a href="#"> Admin IP-Restriction</a></li>
+						</ul>
+					</li>
+				</ul>
+				</div>
+				</fieldset>
+			</div>
+			</form>
+
+		</div>
+	</div>
+	<script type="text/javascript" src="lib/jstree/jquery.jstree.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#reportsTree").jstree({					
+				"plugins" : ["themes","html_data","ui","checkbox"],
+				"core" : {
+					"animation" : 100,
+					"initially_open" : [ "cboStdPerm"]
+				},
+				"themes" : {
+					"theme" : "philly",
+					"icons" : false
+				},
+			})
+		});
+	</script>
+</div>

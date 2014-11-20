@@ -1,0 +1,28 @@
+{
+    "fieldTypes": [
+		{
+			"DataType":0,
+			"DataTypeName":"String"
+		},
+		{
+			"DataType":1,
+			"DataTypeName":"int"
+		},
+		{
+			"DataType":2,
+			"DataTypeName":"Float"
+		},
+		{
+			"DataType":3,
+			"DataTypeName":"Date"
+		},
+        {
+            "DataType":4,
+            "DataTypeName":"TimeStamp"
+        },
+        {
+            "DataType":5,
+            "DataTypeName":"boolean"
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="ELT Direct Admin"/>
+	<meta name="keywords" content="" />
+	<meta name="robots" content="noindex,nofollow,noarchive,nocache,nosnippet"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title>Logon to ELT Direct Admin</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/3.1.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/3.1.0/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.0.3/css/font-awesome.min.css"/>
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="lib/html5shiv/3.7.0/html5shiv.js"></script>
+		<script type="text/javascript" src="lib/respondjs/1.4.2/respond.min.js"></script>
+		<script type="text/javascript" src="lib/ie7js/2.1.beta4/IE9.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" type="text/css" href="css/dtstyles.css"/>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css" />
+</head>
+<body>
+        <div id="container">
+            <div id="logo">
+                <!-- img src="images/DTLogo.png" alt=""-->
+				<h2 class="letterpress">Login to ELT Direct Admin</h2>
+            </div>
+            <div id="loginbox">            
+                <form id="loginform" action="index.html">
+    				<p>Please enter your login information to continue.</p>
+                    <div class="input-group input-sm">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span><input class="form-control" type="text" id="username" placeholder="User ID" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span><input class="form-control" type="password" id="password" placeholder="Password" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" style="padding-right: 8px;"><i class="fa fa-key"></i></span><input class="form-control" type="password" id="pin" placeholder="PIN Number" autocomplete="off">
+                    </div>					
+                    <div class="form-actions clearfix">
+                        <div class="pull-left">
+                            <a href="#recoveridform" class="flip-link to-recover-id grey">Forgot your User ID?</a><br/>
+							<a href="#recoverpassform" class="flip-link to-recover-pass grey">Forgot your password?</a>
+                        </div>
+                        <div class="pull-right">
+							<input type="submit" class="btn btn-primary" value="Login">
+                        </div>
+                    </div>
+                    <div class="footer-login">
+						<p>Unauthorized access to the ELT Direct Admin application is strictly prohibited. All attempts to access restricted sections of this application will be considered attempts to circumvent system security and will be logged.</p>                        
+                    </div>
+                </form>
+                <form id="recoveridform" action="#">
+    				<p>Enter your E-mail and your User ID will be emailed to you.</p>
+    				<div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span><input class="form-control" type="text" placeholder="E-mail address" autocomplete="off">
+                    </div>
+                    <div class="form-actions clearfix">
+                        <div class="pull-left">
+                            <a href="#loginform" class="grey flip-link to-login">Click to login</a><br/>
+							<a href="#recoverpassform" class="grey flip-link to-recover-pass">Forgot your password?</a>
+                        </div>
+                        <div class="pull-right">
+                            <input type="submit" class="btn btn-default" value="Recover User ID">
+                        </div>
+                    </div>
+                </form>				
+                <form id="recoverpassform" action="#">
+                    <p>Enter your User ID and E-mail address and we will email you a temporary password.</p>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span><input class="form-control" type="text" placeholder="User ID" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span><input class="form-control" type="text" placeholder="E-mail address" autocomplete="off">
+                    </div>
+                    <div class="form-actions clearfix">
+                        <div class="pull-left">
+                            <a href="#loginform" class="grey flip-link to-login">Click to login</a><br/>
+							<a href="#recoveridform" class="grey flip-link to-recover-id">Forgot your User ID?</a>
+                        </div>
+                        <div class="pull-right">
+							<input type="submit" class="btn btn-default" value="Recover Password">    
+                        </div>
+                    </div>
+                </form>				
+            </div>
+			<div>
+				<div class="pull-right">
+	                <div class="footerIcon-badges-container">
+	                    <ul>
+	                        <li><a href="https://www.dealertrack.com/portal/landing-pages/security-awareness" target="_blank"><img width="131" height="51" alt="" border="none" src="images/secure.png"></a></li>
+	                        <li><a href="https://smp-01.verizonbusiness.com/certinfo/certified.do?CERTID=0210003I200" target="_blank"><img width="145" height="51" alt="" border="none" src="images/trusted.png"></a> </li>
+	                    </ul>
+	                </div>
+				</div>
+			</div>
+        </div>
+
+	<footer>
+		<script type="text/javascript" src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="js/login.js"></script>
+	</footer>
+</body>
+</html>

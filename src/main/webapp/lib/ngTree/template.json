@@ -1,0 +1,191 @@
+{
+    "templates": [
+        {"reportId": "1234",
+		 "orgs":[{"orgId":4499, "orgName":"USAA"},{"orgId":2685, "orgName":"NAVY"}],
+		 "fields":[
+			  {
+				"FieldID":1064,
+				"ReportID":3,
+				"DataField":"ApplicationID",
+				"ToolTip":"Application ID",
+				"Sequence":1,
+				"DataType":0,
+				"FieldName":"Account ID"
+			  },
+			  {
+				"FieldID":1065,
+				"ReportID":3,
+				"DataField":"OwnerName",
+				"ToolTip":"Borrower/Lessee",
+				"Sequence":2,
+				"DataType":0,
+				"FieldName":"Borrower/Lessee"
+			  },
+			  {
+				"FieldID":1066,
+				"ReportID":3,
+				"DataField":"VIN",
+				"ToolTip":"Vehicle Identification Number",
+				"Sequence":3,
+				"DataType":0,
+				"FieldName":"VIN"
+			  },
+			  {
+				"FieldID":1067,
+				"ReportID":3,
+				"DataField":"LoanStart",
+				"ToolTip":"Loan Start Date",
+				"Sequence":4,
+				"DataType":3,
+				"FieldName":"Loan Start"
+			  },
+			  {
+				"FieldID":1068,
+				"ReportID":3,
+				"DataField":"LoanAmount",
+				"ToolTip":"Loan Amount",
+				"Sequence":5,
+				"DataType":2,
+				"FieldName":"Loan Amount"
+			  },
+			  {
+				"FieldID":1069,
+				"ReportID":3,
+				"DataField":"OrgID",
+				"ToolTip":"Organization",
+				"Sequence":6,
+				"DataType":0,
+				"FieldName":"OrgID"
+			  },
+			  {
+				"FieldID":1070,
+				"ReportID":3,
+				"DataField":"OwnerAddress1",
+				"ToolTip":"Owner Address 1",
+				"Sequence":7,
+				"DataType":0,
+				"FieldName":"Owner Address 1"
+			  },
+			  {
+				"FieldID":1071,
+				"ReportID":3,
+				"DataField":"OwnerAddress2",
+				"ToolTip":"Owner Address 2",
+				"Sequence":8,
+				"DataType":0,
+				"FieldName":"Owner Address 2"
+			  },
+			  {
+				"FieldID":1072,
+				"ReportID":3,
+				"DataField":"OwnerCity",
+				"ToolTip":"Owner City",
+				"Sequence":9,
+				"DataType":0,
+				"FieldName":"Owner City"
+			  },
+			  {
+				"FieldID":1073,
+				"ReportID":3,
+				"DataField":"OwnerState",
+				"ToolTip":"Owner State",
+				"Sequence":10,
+				"DataType":0,
+				"FieldName":"Owner State"
+			  },
+			  {
+				"FieldID":1074,
+				"ReportID":3,
+				"DataField":"OwnerZip",
+				"ToolTip":"Owner ZIP",
+				"Sequence":11,
+				"DataType":0,
+				"FieldName":"Owner ZIP"
+			  },
+			  {
+				"FieldID":1075,
+				"ReportID":3,
+				"DataField":"DaysOutstanding",
+				"ToolTip":"Days Outstanding",
+				"Sequence":12,
+				"DataType":1,
+				"FieldName":"Day(s) OS"
+			  },
+			  {
+				"FieldID":1076,
+				"ReportID":3,
+				"DataField":"LoanStatus",
+				"ToolTip":"Loan Status",
+				"Sequence":13,
+				"DataType":0,
+				"FieldName":"Loan Status"
+			  },
+			  {
+				"FieldID":1077,
+				"ReportID":3,
+				"DataField":"Year",
+				"ToolTip":"Vehicle Year",
+				"Sequence":14,
+				"DataType":0,
+				"FieldName":"Year"
+			  },
+			  {
+				"FieldID":1078,
+				"ReportID":3,
+				"DataField":"Make",
+				"ToolTip":"Make",
+				"Sequence":15,
+				"DataType":0,
+				"FieldName":"Make"
+			  },
+			  {
+				"FieldID":1079,
+				"ReportID":3,
+				"DataField":"Model",
+				"ToolTip":"Vehicle Model",
+				"Sequence":16,
+				"DataType":0,
+				"FieldName":"Model"
+			  },
+			  {
+				"FieldID":1359,
+				"ReportID":3,
+				"DataField":"DealerID",
+				"ToolTip":"Dealer ID",
+				"Sequence":17,
+				"DataType":0,
+				"FieldName":"Dealer ID"
+			  },
+			  {
+				"FieldID":2281,
+				"ReportID":3,
+				"DataField":"LoanBalance",
+				"ToolTip":"Loan Balance",
+				"Sequence":18,
+				"DataType":2,
+				"FieldName":"Loan Balance"
+			  },
+			  {
+				"FieldID":4803,
+				"ReportID":3,
+				"DataField":"EntryDate",
+				"ToolTip":"Entry Date",
+				"Sequence":19,
+				"DataType":3,
+				"FieldName":"Entry Date"
+			  },
+			  {
+				"FieldID":9042,
+				"ReportID":3,
+				"DataField":"phone",
+				"ToolTip":"DealerPhoneNumber",
+				"Sequence":20,
+				"DataType":1,
+				"FieldName":"Dealer Phone Number"
+			  }
+			]
+		},
+        {"reportId": "1235","orgs":[{"orgId":2685, "orgName":"NAVY"},{"orgId":2096, "orgName":"BOA"}], "fields":[]},
+        {"reportId": "1236","orgs":[{"orgId":2096, "orgName":"BOA"},{"orgId":4499, "orgName":"USAA"}], "fields":[]}
+    ]
+}

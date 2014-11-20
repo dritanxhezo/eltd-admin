@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0" xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+	<!-- named-query name="User.ALL1">
+	    <query>select m from User m order by m.name</query>
+	    <hint name="org.hibernate.timeout" value="200"/>
+	</named-query-->
+	<named-native-query name="User.ALL" result-class="com.vintek.database.model.user.User">
+	  <query>select * from Users order by name</query>
+	</named-native-query>
+    <named-native-query name="User.ByUserId" result-class="com.vintek.database.model.user.User">
+      <query>select * from Users where UserID=?</query>
+    </named-native-query>
+    <named-native-query name="Privilege.ByGroup" result-class="com.vintek.database.model.user.Privilege">
+      <query>select * from Privileges where DisplayGroup=?</query>
+    </named-native-query>
+    <named-native-query name="Group.ALL" result-class="com.vintek.database.model.user.Group">
+      <query>select * from [VintekGroup] order by name</query>
+    </named-native-query>
+    
+    <named-native-query name="Reports.NonAdmin" result-class="com.vintek.database.model.report.Report">
+        <query>SELECT distinct [Name],[ID],[Type],[OrganizationID],[IncludeArchive],[ReportTable],[UserID]
+               FROM [ReportTemplateList]
+               WHERE [OrganizationID]=? and [UserID]=? and [Type] not in (5,6)
+               ORDER BY Name
+        </query>
+    </named-native-query>
+    <named-native-query name="Reports.Admin" result-class="com.vintek.database.model.report.Report">
+        <query>SELECT distinct [Name],[ID],[Type],[OrganizationID],[IncludeArchive],[ReportTable],[UserID]
+               FROM [ReportTemplateList]
+               WHERE [OrganizationID]=? and [UserID]=? and [Type] in (5,6)
+               ORDER BY Name
+        </query>
+    </named-native-query>
+    <named-native-query name="Reports.ById" result-class="com.vintek.database.model.report.Report">
+        <query>SELECT distinct [Name],[ID],[Type],[OrganizationID],[IncludeArchive],[ReportTable],[UserID]
+               FROM [ReportTemplateList]
+               WHERE [ID]=?
+        </query>
+    </named-native-query>
+    <named-native-query name="Reports.Fields" result-class="com.vintek.database.model.report.ReportField">
+        <query>SELECT distinct [FieldID],[ReportID],[DataField],[ToolTip],[Sequence],[DataType],[FieldName],[KeyField]
+               FROM [ReportTemplateList]
+               WHERE [ID]=?
+               ORDER BY [Sequence]
+        </query>
+    </named-native-query>
+</entity-mappings>

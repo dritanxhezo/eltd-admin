@@ -1,0 +1,57 @@
+{
+    "notiCounts": [
+        {"name":"System Notifications","count": 2,"icon":"glyphicon glyphicon-volume-up"},
+        {"name":"Import Errors","count": 13,"icon":"glyphicon glyphicon-transfer"},
+        {"name":"DMV Errors","count": 4,"icon":"glyphicon glyphicon-transfer"}        
+    ],
+    "assignedOrgs": [
+        {"orgId": "2154","orgName": "USAA","disabled": false,"isDefault": true},
+        {"orgId": "4554","orgName": "NAVY","disabled": false,"isDefault": false},
+        {"orgId": "4556","orgName": "BOA","disabled": true,"isDefault": false}
+    ],
+    "details": {
+        "userID": "dxhezo",
+        "name": "Dritan Xhezo",
+        "email": "dxhezo@vintek.com",
+        "phone": "215-969-8969",
+        "ext": "  587",
+        "timeZone": "EST",
+        "misc": "",
+        "enabled": true,
+        "failedLogins": 0,
+        "expiresOn": "4/25/2015",
+        "createdOn": "4/03/2014",
+        "createdBy": "Dritan Xhezo (dxhezo)",
+        "lastLogin": "4/02/2014, 12:42PM",
+        "lockedOut": true,
+        "trainingStart": "5/7/1989",
+        "trainingEnd": "5/17/1989",
+        "comment": "",
+        "loggedFrom": "125.256.365.256",
+        "broadcastMsgChannels": [
+            "email",
+            "broadcast"
+        ],
+        "defaultOrg": "4554",
+        "defaultAccountSearch": "active",
+        "group": "some group"
+    },
+    "recentDocs": [
+		{"orgId": "4499", "type": "Loan", "state": "MO", "docId": "1017433408"},
+		{"orgId": "4499", "type": "Title", "state": "MA", "docId": "BK496858"},
+		{"orgId": "2651", "type": "Loan", "state": "MD", "docId": "43001486183571-0000001"},
+		{"orgId": "2651", "type": "Loan", "state": "FL", "docId": "43000703903416-0000001"},
+		{"orgId": "1811", "type": "Loan", "state": "CA", "docId": "6822955811699"},
+		{"orgId": "1811", "type": "Loan", "state": "WI", "docId": "WBGHT5792Y321654"},
+		{"orgId": "4499", "type": "Loan", "state": "NY", "docId": "LRUHEL1234"},
+		{"orgId": "1811", "type": "Loan", "state": "PR", "docId": "VINtekDemo1"},
+		{"orgId": "4499", "type": "Loan", "state": "FL", "docId": "1039700057"},
+		{"orgId": "4499", "type": "Loan", "state": "WA", "docId": "1038821730"}
+    ],
+    "recentReports": [
+        {"reportId": "1234","reportName": "hjasdbfj agsjdg"},
+        {"reportId": "1234","reportName": "hjasdbfj agsjdg"},
+        {"reportId": "1234","reportName": "hjasdbfj agsjdg"},
+        {"reportId": "1234","reportName": "hjasdbfj agsjdg"}
+    ]
+}

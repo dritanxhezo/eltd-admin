@@ -1,0 +1,298 @@
+<div ng-controller="workflowCtrl">
+	<div class="row">
+		<ul class="nav nav-tabs">
+		  <li><a href="#loan" data-toggle="tab">Loan: 0052828266</a></li>
+		  <li><a href="#title" data-toggle="tab">Title Information</a></li>
+		  <li class="active"><a href="#workflow" data-toggle="tab">Workflow</a></li>
+		  <li><a href="#lienInq" data-toggle="tab">Lien Inquiry</a></li>
+		  <li><a href="#attachments" data-toggle="tab">View/Edit 1 Attachment(s)</a></li>
+		  <li><a href="#documents" data-toggle="tab">DMV Documents</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+		  <div class="tab-pane fade placeholderDiv text-center" id="loan">Loan</div>
+		  <div class="tab-pane fade placeholderDiv text-center" id="title">Title</div>
+		  <div class="tab-pane fade in active " id="workflow">
+			<fieldset><legend>Workflow history</legend>
+			<div class="dataTable withPagination">
+				<table class="table-condensed xtend-zebra" width="100%">
+					<thead>
+					<tr>
+						<th>Collateral</th><th>Status</th><th>Reason</th><th>Document</th><th>Start Date</th><th>Start User</th><th>End Date</th><th>End User</th><th>Due Date</th><th>Collated</th><th>&nbsp;</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>1B3HB48A79D157193<hr>Title: Unmatched</td>
+						<td>STARTDTF_P - Start DTF for P</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>8/27/12 9:46:27 AM EDT</td>
+						<td>System</td>
+						<td>9/27/12 3:23:57 AM EDT</td>
+						<td>SYSTEM</td>
+						<td><span class="overdue">9/26/12 9:46:27 AM EDT</span></td>
+						<td>&nbsp;</td>
+						<td class="text-center">
+							<a class="btn btn-default btn-circle new-note" id="phone-1" name="phone-1" rel="popover" data-wfid="12589" data-notetype="phone"><span class="glyphicon glyphicon-earphone"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="fee-1" name="fee-1" rel="popover" data-wfid="12589" data-notetype="fee"><span class="glyphicon glyphicon-usd"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="note-1" name="note-1" rel="popover" data-wfid="12589" data-notetype="other"><span class="glyphicon glyphicon-pencil"></span></a>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="11">
+							<div class="wf-note"><span class="glyphicon glyphicon-earphone"></span><span class="note-text">Nunc blandit leo eget mi eleifend porta eu vitae tortor. Mauris est sem, sagittis eu eros ornare, blandit dictum mauris.</span></div>							
+							<div class="wf-note"><span class="glyphicon glyphicon-pencil"></span><span class="note-text">Duis vestibulum lorem id blandit dictum. Aenean aliquam nibh id sollicitudin sagittis.</span></div>
+						</td>
+					</tr>
+					<tr>
+						<td>1B3HB48A79D157193<hr>Title: Unmatched</td>
+						<td>DTFL5.1 - DTF letter 1</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>9/27/12 3:23:57 AM EDT</td>
+						<td>SYSTEM</td>
+						<td>10/27/12 3:29:07 AM EDT</td>
+						<td>SYSTEM</td>
+						<td><span class="overdue">10/27/12 3:23:57 AM EDT</span></td>
+						<td>&nbsp;</td>
+						<td class="text-center">
+							<a class="btn btn-default btn-circle new-note" id="phone-2" name="phone-2" rel="popover" data-wfid="12590" data-notetype="phone"><span class="glyphicon glyphicon-earphone"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="fee-2" name="fee-2" rel="popover" data-wfid="12590" data-notetype="fee"><span class="glyphicon glyphicon-usd"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="note-2" name="note-2" name="note-1" rel="popover" data-wfid="12589" data-notetype="other"><span class="glyphicon glyphicon-pencil"></span></a>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="11">
+							<div class="wf-note"><span class="glyphicon glyphicon-earphone"></span><span class="note-text">Nunc blandit leo eget mi eleifend porta eu vitae tortor. Mauris est sem, sagittis eu eros ornare, blandit dictum mauris.</span></div>
+							<div class="wf-note"><span class="glyphicon glyphicon-usd"></span><span class="note-text">Duis et pulvinar lacus. Aliquam vehicula nisi sit amet ligula vulputate, eu sagittis ante fringilla. Curabitur erat metus, fermentum non euismod vitae, tincidunt sit amet diam. Sed auctor tristique tortor, et consectetur tortor dictum in. Curabitur id odio blandit, viverra eros vitae, facilisis lacus. Nulla felis elit, cursus sed facilisis.</span></div>
+							<div class="wf-note"><span class="glyphicon glyphicon-pencil"></span><span class="note-text">Duis vestibulum lorem id blandit dictum. Aenean aliquam nibh id sollicitudin sagittis.</span></div>
+						</td>
+					</tr>
+					<tr>
+						<td>1B3HB48A79D157193<hr>Title: Unmatched</td>
+						<td>DTFL5.2 - DTF letter 2</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>10/27/12 3:29:07 AM EDT</td>
+						<td>SYSTEM</td>
+						<td>11/27/12 3:20:12 AM EST</td>
+						<td>SYSTEM</td>
+						<td><span class="overdue">10/27/12 3:23:57 AM EDT</span></td>
+						<td>&nbsp;</td>
+						<td class="text-center">
+							<a class="btn btn-default btn-circle new-note" id="phone-3" name="phone-3" rel="popover" data-wfid="12591" data-notetype="phone"><span class="glyphicon glyphicon-earphone"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="fee-3" name="fee-3" rel="popover" data-wfid="12591" data-notetype="fee"><span class="glyphicon glyphicon-usd"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="note-3" name="note-3" name="note-1" rel="popover" data-wfid="12589" data-notetype="other"><span class="glyphicon glyphicon-pencil"></span></a>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="11">
+							<div class="wf-note"><span class="glyphicon glyphicon-pencil"></span><span class="note-text">Duis vestibulum lorem id blandit dictum. Aenean aliquam nibh id sollicitudin sagittis.</span></div>
+						</td>
+					</tr>
+					<tr>
+						<td>1B3HB48A79D157193<hr>Title: Unmatched</td>
+						<td>DTFL5.3 - DTF letter 3</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>11/27/12 3:20:12 AM EST</td>
+						<td>SYSTEM</td>
+						<td>12/24/12 2:10:56 PM EST</td>
+						<td>Samantha Ringle</td>
+						<td><span class="overdue">12/27/12 3:20:00 AM EST</span></td>
+						<td>&nbsp;</td>
+						<td class="text-center">
+							<a class="btn btn-default btn-circle new-note" id="phone-4" name="phone-4" rel="popover" data-wfid="12592" data-notetype="phone"><span class="glyphicon glyphicon-earphone"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="fee-4" name="fee-4" rel="popover" data-wfid="12592" data-notetype="fee"><span class="glyphicon glyphicon-usd"></span></a>
+							<a class="btn btn-default btn-circle new-note" id="note-4" name="note-4" name="note-1" rel="popover" data-wfid="12589" data-notetype="other"><span class="glyphicon glyphicon-pencil"></span></a>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="11">
+							<div class="wf-note"><span class="glyphicon glyphicon-earphone"></span><span class="note-text">Nunc blandit leo eget mi eleifend porta eu vitae tortor. Mauris est sem, sagittis eu eros ornare, blandit dictum mauris.</span></div>
+							<div class="wf-note"><span class="glyphicon glyphicon-earphone"></span><span class="note-text">Duis vestibulum lorem id blandit dictum. Aenean aliquam nibh id sollicitudin sagittis.</span></div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<ul class="pagination pagination-sm">
+			  <li><a href="#">&laquo;</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">&raquo;</a></li>
+			</ul>
+			</fieldset>
+
+			<form>
+				<fieldset><legend>Add a new workflow entry</legend>
+				<div class="row">
+					<div class="form-group col-xs-2">
+						<label class="control-label" for="selCollateral">Collateral</label>
+						<select class="form-control" id="selCollateral" name="selCollateral" size="1">
+							<option value="1">1B3HB48A79D157193</option>
+						</select>
+					</div>
+					<div class="form-group col-xs-4">
+						<label class="control-label" for="newStatus">Status / Reason</label>
+						<select class="form-control" id="newStatus" name="newStatus" size="1" onchange="#">
+							<option value="" selected="selected">Select Status Code</option>
+							<option value="829">10 - Maintenance Release State to State</option>
+							<option value="854">130 - Submitted</option>
+							<option value="1187">15 - Documents Discrepant</option>
+							<option value="855">2LH - 2nd Lien Filing Req</option>
+							<option value="843">300 - 1st Title App to Member</option>
+							<option value="924">300B - Title App Prepared and directed to TPD</option>
+							<option value="1078">300BI - Incomplete ILP</option>
+							<option value="856">300D - Send BOS letter code for Dup App #1</option>
+							<option value="906">300DUA - Dup &amp; Title Apps generated for mbr. sent to TPD</option>
+							<option value="1244">300DUADN - Dup and LP app with different names</option>
+							<option value="908">300DUAM - 1st Dup &amp; Title Apps created w/ LFRL mailed to Mbr</option>
+						</select>
+					</div>
+					<div class="form-group col-xs-2">
+						<label class="control-label" for="newDocument">Document</label>
+						<input class="form-control" id="newDocument" name="newDocument" type="text" value="">
+					</div>					
+					<div class="form-group col-xs-2">
+						<label class="control-label" for="duedateInputDate">Due Date</label>
+						<input class="form-control" id="duedateInputDate" name="duedateInputDate" type="text" value="03/26/2014 10:12 PM">
+					</div>
+					<div class="form-group col-xs-1" style="margin-top:22px;">
+						<label class="control-label" for="collate">Collate</label>
+						<input id="collate" type="checkbox" name="collate">
+					</div>
+					<div class="form-group col-xs-1" style="margin-top:22px;">
+						<button id="btnSave" name="btnSave" class="btn btn-primary">Save</button>
+					</div>
+				</div>
+				</fieldset>
+			</form>
+		  </div>
+		  <div class="tab-pane fade placeholderDiv text-center" id="lienInq">Lien Inquiry</div>
+		  <div class="tab-pane fade placeholderDiv text-center" id="attachments">Attachments</div>
+		  <div class="tab-pane fade placeholderDiv text-center" id="documents">DMV Documents</div>
+		</div>
+		<!-- /tab panes -->
+	</div>
+	<!-- notes -->
+	<div class="row">
+		<fieldset><legend>Notes</legend>
+		<div class="col-xs-6 col-xs-offset-3"><small><a href="#">Print as PDF</a> - <a href="#">Print as Text</a></small></div>		
+		<div class="col-xs-6 col-xs-offset-3 scrollContainer">
+			<table class="liNotesTable scrollTable">				
+				<thead>
+					<tr>
+						<th style="cursor: pointer;">Date <span class="caret"></span></th>
+						<th>User</th>
+						<th>Urgent?</th>
+						<th>Note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+					<tr>
+						<td>8/14/13 9:11 AM</td>
+						<td>SYSTEM</td>
+						<td><i class="fa fa-exclamation-circle text-danger"></td>
+						<td>Some Note</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-xs-6 col-xs-offset-3">
+			<div class="form-group col-xs-9"><label for="newNoteText" class="control-label">Enter a new note:</label><textarea id="newNoteText" name="newNoteText" rows="2" class="form-control"></textarea></div>
+			<div class="form-group col-xs-3">
+			  <div class="checkbox"><label style="font-weight:700;"><input type="checkbox" name="newNoteUrgent" id="newNoteUrgent" style="margin-top:2px;"> Urgent</label></div>
+			  <div><a href="#" class="btn btn-sm btn-default"><i class="fa fa-floppy-o"></i> Save Note</a></div>
+			</div>
+		</div>
+		</fieldset>
+	</div>
+	<!-- /notes -->
+	<script>
+		$(document).ready(function(){
+			$('.new-note').popover({title: 'Please enter a new note:', 
+									placement: 'left', 
+									html: true,
+									container: 'body',
+									content: function(){
+												return '<div class="new-note"><input type="text" size="100" value="'+$(this).data('notetype')+':'+$(this).data('wfid')+'"><input type="button" value=" Save " onclick="#"><input type="button" value=" Cancel " class="cancel-new-note"></div>';
+											}
+									});
+			$('.cancel-new-note').click(function(){
+				$('.new-note').popover('destroy');
+			});
+		});
+	</script>
+</div>

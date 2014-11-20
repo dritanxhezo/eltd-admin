@@ -1,0 +1,28 @@
+var cols = $("#result thead tr th").map(function(){
+
+  return $(this).text();
+
+});
+
+// eliminate the extraneous strings from cols
+
+var headers = cols.splice(0, cols.length);
+
+// Fetch the data from the table body
+
+var tableObject = $("#result tbody tr").map(function(i){
+
+  var row = {};
+
+    $(this).find('td').each(function(i){
+      var rowName = headers[i];
+      row[rowName] = $(this).text();
+    });
+
+  return row;
+
+ }).get();
+
+// convert object to JSON
+
+JSON.stringify(tableObject);
